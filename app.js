@@ -67,9 +67,9 @@ io.on('connection', socket => {
 				username: user.name,
 				avatar: user.avatar,
 				user_id,
-				time: dtime().format('YYYY-MM-DD HH:mm:ss'),
+				time: dtime(new Date).format('YYYY-MM-DD HH:mm:ss'),
 				content,
-			}
+        }
 			await ChatModel.create(chatObj)
  		}catch(err){
  			console.log('保存聊天数据失败', err);
